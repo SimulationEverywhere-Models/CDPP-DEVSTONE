@@ -1,0 +1,45 @@
+Synthetic Benchmark TOOL
+July 2002
+
+---------------------------
+MODEL GENERATOR
+---------------------------
+Use this application to generate a model of a given shape/structure/behavior.
+
+Usage: perl rtgenX/rtgeneratorX.pl FILENAME LEVEL INTDELAY EXTDELAY MODELS_LEVEL
+
+Example: perl rtgen1/rtgenerator1.pl model_1.ma 5 1000 5000 8;
+
+
+More Examples
+*************
+
+1. To create a Type-1 model with 3 levels of depth, no Dhrystone code in dInt, no Dhrystone code in dExt, and 4 models per level:
+
+perl rtgen1/rtgenerator1.pl model_1.ma 3 0 0 4;
+
+
+2. To create a Type-2 model with 5 levels of depth, 5000 cycles of Dhrystone code in dInt, 10000 cycles of Dhrystone code in dExt, and 20 models per level:
+
+
+perl rtgen2/rtgenerator2.pl model_2.ma 5 5000 10000 20;
+
+
+3. To create a Type-3 model with 10 levels of depth, 25000 cycles of Dhrystone code in dInt, 15000 cycles of Dhrystone code in dExt, and 14 models per level:
+
+
+perl rtgen3/rtgenerator3.pl model_3.ma 10 25000 15000 14;
+
+
+---------------------------
+EXTERNAL EVENT GENERATOR
+---------------------------
+Use this application to generate a set of External Events.
+
+Usage: perl evgenerator FILENAME quantity interval_msec base_msec in_port out_port value dea dline_time_milisec
+
+Example: perl evgen/evgenerator.pl events.ev 10 500 10000 in out 1 250
+
+-----------------------------------------------------------------
+For more information: Ezequiel Glinsky <eglinsky@dc.uba.ar>
+-----------------------------------------------------------------
